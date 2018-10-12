@@ -59,14 +59,14 @@ all: clean_all debug
 debug: CXXFLAGS += -g
 debug: CFLAGS += -g
 debug: PROJECT_DEFINES += -D_DEBUG
-debug: opensea-api
+debug: opensea-api mk_debug_package
 
 release: CXXFLAGS += -O3
 release: CFLAGS += -O3
-release: opensea-api
+release: opensea-api mk_release_package
 
 static-release: LFLAGS += -static
-static-release: opensea-api
+static-release: opensea-api mk_static_package
 
 export CFLAGS
 export CXXFLAGS
@@ -88,7 +88,27 @@ clean_all: clean
 	$(MAKE) -C ../../opensea-transport/Make/gcc clean
 	$(MAKE) -C ../../opensea-operations/Make/gcc clean
 
+copy_headers:
+	cp ../../opensea-common/include/* $(LIB_FILE_OUTPUT_DIR)/release/headers/
+	cp ../../opensea-transport/include/* $(LIB_FILE_OUTPUT_DIR)/release/headers/
+	cp ../../opensea-operations/include/* $(LIB_FILE_OUTPUT_DIR)/release/headers/
+
+mk_debug_package: copy_headers
+	cp ../../opensea-common/Make/gcc/lib/* $(LIB_FILE_OUTPUT_DIR)/debug/
+	cp ../../opensea-transport/Make/gcc/lib/* $(LIB_FILE_OUTPUT_DIR)/debug/
+	cp ../../opensea-operations/Make/gcc/lib/* $(LIB_FILE_OUTPUT_DIR)/debug/
+
+mk_release_package: copy_headers
+	cp ../../opensea-common/Make/gcc/lib/* $(LIB_FILE_OUTPUT_DIR)/release/
+	cp ../../opensea-transport/Make/gcc/lib/* $(LIB_FILE_OUTPUT_DIR)/release/
+	cp ../../opensea-operations/Make/gcc/lib/* $(LIB_FILE_OUTPUT_DIR)/release/
+
+mk_static_package: copy_headers
+	cp ../../opensea-common/Make/gcc/lib/* $(LIB_FILE_OUTPUT_DIR)/static-release/
+	cp ../../opensea-transport/Make/gcc/lib/* $(LIB_FILE_OUTPUT_DIR)/static-release/
+	cp ../../opensea-operations/Make/gcc/lib/* $(LIB_FILE_OUTPUT_DIR)/static-release/
+
 mkoutputdir:
-	mkdir -p $(LIB_FILE_OUTPUT_DIR)/debug 
-	mkdir -p $(LIB_FILE_OUTPUT_DIR)/release
-	mkdir -p $(LIB_FILE_OUTPUT_DIR)/static-release
+	mkdir -p $(LIB_FILE_OUTPUT_DIR)/debug/headers
+	mkdir -p $(LIB_FILE_OUTPUT_DIR)/release/headers
+	mkdir -p $(LIB_FILE_OUTPUT_DIR)/static-release/headers
