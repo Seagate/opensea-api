@@ -89,4 +89,6 @@ clean_all: clean
 	$(MAKE) -C ../../opensea-operations/Make/gcc clean
 
 mkoutputdir:
-	mkdir -p $(LIB_FILE_OUTPUT_DIR)
+	mkdir -p $(LIB_FILE_OUTPUT_DIR)/debug 
+	mkdir -p $(LIB_FILE_OUTPUT_DIR)/release
+	mkdir -p $(LIB_FILE_OUTPUT_DIR)/static-release
