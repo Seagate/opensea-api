@@ -14,6 +14,7 @@
 
 CC = gcc
 LIB_FILE_OUTPUT_DIR=lib
+API_FILE_OUTPUT_DIR=opensea-api
 STRIP = strip
 CFLAGS = -Wall -c -std=gnu99
 CFLAGS_I686 = -Wall -c -m32
@@ -81,7 +82,7 @@ opensea-api: mkoutputdir
 	$(CC) $(CFLAGS) $(INC_DIR) $(PROJECT_DEFINES) $< -o $@
 
 clean:
-	rm -f *.o *.a  -r $(LIB_FILE_OUTPUT_DIR)
+	rm -f *.o *.a  -r $(API_FILE_OUTPUT_DIR)
 
 clean_all: clean
 	$(MAKE) -C ../../opensea-common/Make/gcc clean
@@ -89,26 +90,26 @@ clean_all: clean
 	$(MAKE) -C ../../opensea-operations/Make/gcc clean
 
 copy_headers:
-	cp ../../opensea-common/include/* $(LIB_FILE_OUTPUT_DIR)/release/headers/
-	cp ../../opensea-transport/include/* $(LIB_FILE_OUTPUT_DIR)/release/headers/
-	cp ../../opensea-operations/include/* $(LIB_FILE_OUTPUT_DIR)/release/headers/
+	cp ../../opensea-common/include/* $(API_FILE_OUTPUT_DIR)/release/headers/
+	cp ../../opensea-transport/include/* $(API_FILE_OUTPUT_DIR)/release/headers/
+	cp ../../opensea-operations/include/* $(API_FILE_OUTPUT_DIR)/release/headers/
 
 mk_debug_package: copy_headers
-	cp ../../opensea-common/Make/gcc/lib/* $(LIB_FILE_OUTPUT_DIR)/debug/
-	cp ../../opensea-transport/Make/gcc/lib/* $(LIB_FILE_OUTPUT_DIR)/debug/
-	cp ../../opensea-operations/Make/gcc/lib/* $(LIB_FILE_OUTPUT_DIR)/debug/
+	cp ../../opensea-common/Make/gcc/lib/* $(API_FILE_OUTPUT_DIR)/debug/
+	cp ../../opensea-transport/Make/gcc/lib/* $(API_FILE_OUTPUT_DIR)/debug/
+	cp ../../opensea-operations/Make/gcc/lib/* $(API_FILE_OUTPUT_DIR)/debug/
 
 mk_release_package: copy_headers
-	cp ../../opensea-common/Make/gcc/lib/* $(LIB_FILE_OUTPUT_DIR)/release/
-	cp ../../opensea-transport/Make/gcc/lib/* $(LIB_FILE_OUTPUT_DIR)/release/
-	cp ../../opensea-operations/Make/gcc/lib/* $(LIB_FILE_OUTPUT_DIR)/release/
+	cp ../../opensea-common/Make/gcc/lib/* $(API_FILE_OUTPUT_DIR)/release/
+	cp ../../opensea-transport/Make/gcc/lib/* $(API_FILE_OUTPUT_DIR)/release/
+	cp ../../opensea-operations/Make/gcc/lib/* $(API_FILE_OUTPUT_DIR)/release/
 
 mk_static_package: copy_headers
-	cp ../../opensea-common/Make/gcc/lib/* $(LIB_FILE_OUTPUT_DIR)/static-release/
-	cp ../../opensea-transport/Make/gcc/lib/* $(LIB_FILE_OUTPUT_DIR)/static-release/
-	cp ../../opensea-operations/Make/gcc/lib/* $(LIB_FILE_OUTPUT_DIR)/static-release/
+	cp ../../opensea-common/Make/gcc/lib/* $(API_FILE_OUTPUT_DIR)/static-release/
+	cp ../../opensea-transport/Make/gcc/lib/* $(API_FILE_OUTPUT_DIR)/static-release/
+	cp ../../opensea-operations/Make/gcc/lib/* $(API_FILE_OUTPUT_DIR)/static-release/
 
 mkoutputdir:
-	mkdir -p $(LIB_FILE_OUTPUT_DIR)/debug/headers
-	mkdir -p $(LIB_FILE_OUTPUT_DIR)/release/headers
-	mkdir -p $(LIB_FILE_OUTPUT_DIR)/static-release/headers
+	mkdir -p $(API_FILE_OUTPUT_DIR)/debug/headers
+	mkdir -p $(API_FILE_OUTPUT_DIR)/release/headers
+	mkdir -p $(API_FILE_OUTPUT_DIR)/static-release/headers
