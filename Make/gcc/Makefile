@@ -91,7 +91,7 @@ clean_all: clean
 
 copy_headers:
 	cp ../../opensea-common/include/* $(API_FILE_OUTPUT_DIR)/release/headers/
-	cp ../../opensea-transport/include/* $(API_FILE_OUTPUT_DIR)/release/headers/
+	cp -r ../../opensea-transport/include/* $(API_FILE_OUTPUT_DIR)/release/headers/
 	cp ../../opensea-operations/include/* $(API_FILE_OUTPUT_DIR)/release/headers/
 
 mk_debug_package: copy_headers
