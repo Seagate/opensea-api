@@ -1,207 +1,228 @@
 <!DOCTYPE Project SYSTEM "http://www.slickedit.com/dtd/vse/10.0/vpj.dtd">
 <Project
-    Version="10.0"
-    VendorName="SlickEdit"
-    TemplateName="(Other)"
-    WorkingDir=".">
-    <Config
-        Name="Release"
-        OutputFile=""
-        CompilerConfigName="">
-        <Menu>
-            <Target
-                Name="Compile"
-                MenuCaption="&amp;Compile"
-                CaptureOutputWith="ProcessBuffer"
-                SaveOption="SaveCurrent"
-                RunFromDir="%rw">
-                <Exec/>
-            </Target>
-            <Target
-                Name="Build"
-                MenuCaption="&amp;Build"
-                CaptureOutputWith="ProcessBuffer"
-                SaveOption="SaveWorkspaceFiles"
-                RunFromDir="%rw">
-                <Exec/>
-            </Target>
-            <Target
-                Name="Rebuild"
-                MenuCaption="&amp;Rebuild"
-                CaptureOutputWith="ProcessBuffer"
-                SaveOption="SaveWorkspaceFiles"
-                RunFromDir="%rw">
-                <Exec/>
-            </Target>
-            <Target
-                Name="Debug"
-                MenuCaption="&amp;Debug"
-                SaveOption="SaveNone"
-                RunFromDir="%rw">
-                <Exec/>
-            </Target>
-            <Target
-                Name="Execute"
-                MenuCaption="E&amp;xecute"
-                SaveOption="SaveNone"
-                RunFromDir="%rw">
-                <Exec CmdLine='".exe"'/>
-            </Target>
-        </Menu>
-    </Config>
-    <CustomFolders>
-        <Folder
-            Name="Source Files"
-            Filters="*.c;*.C;*.cc;*.cpp;*.cp;*.cxx;*.c++;*.prg;*.pas;*.dpr;*.asm;*.s;*.bas;*.java;*.cs;*.sc;*.e;*.cob;*.html;*.rc;*.tcl;*.py;*.pl;*.d;*.m;*.mm;*.go"></Folder>
-        <Folder
-            Name="Header Files"
-            Filters="*.h;*.H;*.hh;*.hpp;*.hxx;*.h++;*.inc;*.sh;*.cpy;*.if"></Folder>
-        <Folder
-            Name="Resource Files"
-            Filters="*.ico;*.cur;*.dlg"/>
-        <Folder
-            Name="Bitmaps"
-            Filters="*.bmp"/>
-        <Folder
-            Name="Other Files"
-            Filters=""/>
-    </CustomFolders>
-    <Files AutoFolders="DirectoryView">
-        <Folder Name="../gcc">
-            <F
-                N="../gcc/Makefile"
-                Type="Makefile"/>
-        </Folder>
-        <Folder Name="../../opensea-common">
-            <Folder Name="include">
-                <F N="../../opensea-common/include/common.h"/>
-                <F N="../../opensea-common/include/common_nix.h"/>
-                <F N="../../opensea-common/include/common_platform.h"/>
-                <F N="../../opensea-common/include/common_windows.h"/>
-                <F N="../../opensea-common/include/opensea_common_version.h"/>
-            </Folder>
-            <Folder Name="src">
-                <F N="../../opensea-common/src/common.c"/>
-                <F N="../../opensea-common/src/common_nix.c"/>
-                <F N="../../opensea-common/src/common_platform.c"/>
-                <F N="../../opensea-common/src/common_windows.c"/>
-            </Folder>
-        </Folder>
-        <Folder Name="../../opensea-operations">
-            <Folder Name="include">
-                <F N="../../opensea-operations/include/ata_Security.h"/>
-                <F N="../../opensea-operations/include/buffer_test.h"/>
-                <F N="../../opensea-operations/include/defect.h"/>
-                <F N="../../opensea-operations/include/depopulate.h"/>
-                <F N="../../opensea-operations/include/device_statistics.h"/>
-                <F N="../../opensea-operations/include/drive_info.h"/>
-                <F N="../../opensea-operations/include/dst.h"/>
-                <F N="../../opensea-operations/include/firmware_download.h"/>
-                <F N="../../opensea-operations/include/format_unit.h"/>
-                <F N="../../opensea-operations/include/generic_tests.h"/>
-                <F N="../../opensea-operations/include/host_erase.h"/>
-                <F N="../../opensea-operations/include/logs.h"/>
-                <F N="../../opensea-operations/include/opensea_operation_version.h"/>
-                <F N="../../opensea-operations/include/operations.h"/>
-                <F N="../../opensea-operations/include/operations_Common.h"/>
-                <F N="../../opensea-operations/include/power_control.h"/>
-                <F N="../../opensea-operations/include/sanitize.h"/>
-                <F N="../../opensea-operations/include/sas_phy.h"/>
-                <F N="../../opensea-operations/include/seagate_operations.h"/>
-                <F N="../../opensea-operations/include/sector_repair.h"/>
-                <F N="../../opensea-operations/include/set_max_lba.h"/>
-                <F N="../../opensea-operations/include/set_sector_size.h"/>
-                <F N="../../opensea-operations/include/smart.h"/>
-                <F N="../../opensea-operations/include/trim_unmap.h"/>
-                <F N="../../opensea-operations/include/writesame.h"/>
-                <F N="../../opensea-operations/include/zoned_operations.h"/>
-            </Folder>
-            <Folder Name="src">
-                <F N="../../opensea-operations/src/ata_Security.c"/>
-                <F N="../../opensea-operations/src/buffer_test.c"/>
-                <F N="../../opensea-operations/src/defect.c"/>
-                <F N="../../opensea-operations/src/depopulate.c"/>
-                <F N="../../opensea-operations/src/device_statistics.c"/>
-                <F N="../../opensea-operations/src/drive_info.c"/>
-                <F N="../../opensea-operations/src/dst.c"/>
-                <F N="../../opensea-operations/src/firmware_download.c"/>
-                <F N="../../opensea-operations/src/format_unit.c"/>
-                <F N="../../opensea-operations/src/generic_tests.c"/>
-                <F N="../../opensea-operations/src/host_erase.c"/>
-                <F N="../../opensea-operations/src/logs.c"/>
-                <F N="../../opensea-operations/src/operations.c"/>
-                <F N="../../opensea-operations/src/power_control.c"/>
-                <F N="../../opensea-operations/src/sanitize.c"/>
-                <F N="../../opensea-operations/src/sas_phy.c"/>
-                <F N="../../opensea-operations/src/seagate_operations.c"/>
-                <F N="../../opensea-operations/src/sector_repair.c"/>
-                <F N="../../opensea-operations/src/set_max_lba.c"/>
-                <F N="../../opensea-operations/src/set_sector_size.c"/>
-                <F N="../../opensea-operations/src/smart.c"/>
-                <F N="../../opensea-operations/src/trim_unmap.c"/>
-                <F N="../../opensea-operations/src/writesame.c"/>
-                <F N="../../opensea-operations/src/zoned_operations.c"/>
-            </Folder>
-        </Folder>
-        <Folder Name="../../opensea-transport">
-            <Folder Name="include">
-                <F N="../../opensea-transport/include/ata_helper.h"/>
-                <F N="../../opensea-transport/include/ata_helper_func.h"/>
-                <F N="../../opensea-transport/include/cam_helper.h"/>
-                <F N="../../opensea-transport/include/cmds.h"/>
-                <F N="../../opensea-transport/include/common_public.h"/>
-                <F N="../../opensea-transport/include/csmi_helper.h"/>
-                <F N="../../opensea-transport/include/csmi_helper_func.h"/>
-                <F N="../../opensea-transport/include/csmisas.h"/>
-                <F N="../../opensea-transport/include/cypress_legacy_helper.h"/>
-                <F N="../../opensea-transport/include/nec_legacy_helper.h"/>
-                <F N="../../opensea-transport/include/nvme_helper.h"/>
-                <F N="../../opensea-transport/include/nvme_helper_func.h"/>
-                <F N="../../opensea-transport/include/platform_helper.h"/>
-                <F N="../../opensea-transport/include/prolific_legacy_helper.h"/>
-                <F N="../../opensea-transport/include/psp_legacy_helper.h"/>
-                <F N="../../opensea-transport/include/sat_helper.h"/>
-                <F N="../../opensea-transport/include/sat_helper_func.h"/>
-                <F N="../../opensea-transport/include/scsi_helper.h"/>
-                <F N="../../opensea-transport/include/scsi_helper_func.h"/>
-                <F N="../../opensea-transport/include/sg_helper.h"/>
-                <F N="../../opensea-transport/include/ti_legacy_helper.h"/>
-                <F N="../../opensea-transport/include/usb_hacks.h"/>
-                <F N="../../opensea-transport/include/uscsi_helper.h"/>
-                <F N="../../opensea-transport/include/version.h"/>
-                <F N="../../opensea-transport/include/vm_helper.h"/>
-                <F N="../../opensea-transport/include/vm_nvme.h"/>
-                <F N="../../opensea-transport/include/vm_nvme_drv_config.h"/>
-                <F N="../../opensea-transport/include/vm_nvme_lib.h"/>
-                <F N="../../opensea-transport/include/vm_nvme_mgmt.h"/>
-                <F N="../../opensea-transport/include/win_helper.h"/>
-            </Folder>
-            <Folder Name="src">
-                <F N="../../opensea-transport/src/ata_cmds.c"/>
-                <F N="../../opensea-transport/src/ata_helper.c"/>
-                <F N="../../opensea-transport/src/ata_legacy_cmds.c"/>
-                <F N="../../opensea-transport/src/cam_helper.c"/>
-                <F N="../../opensea-transport/src/cmds.c"/>
-                <F N="../../opensea-transport/src/common_public.c"/>
-                <F N="../../opensea-transport/src/csmi_helper.c"/>
-                <F N="../../opensea-transport/src/cypress_legacy_helper.c"/>
-                <F N="../../opensea-transport/src/nec_legacy_helper.c"/>
-                <F N="../../opensea-transport/src/nvme_cmds.c"/>
-                <F N="../../opensea-transport/src/nvme_helper.c"/>
-                <F N="../../opensea-transport/src/prolific_legacy_helper.c"/>
-                <F N="../../opensea-transport/src/psp_legacy_helper.c"/>
-                <F N="../../opensea-transport/src/sat_helper.c"/>
-                <F N="../../opensea-transport/src/scsi_cmds.c"/>
-                <F N="../../opensea-transport/src/scsi_helper.c"/>
-                <F N="../../opensea-transport/src/sg_helper.c"/>
-                <F N="../../opensea-transport/src/ti_legacy_helper.c"/>
-                <F N="../../opensea-transport/src/usb_hacks.c"/>
-                <F N="../../opensea-transport/src/uscsi_helper.c"/>
-                <F N="../../opensea-transport/src/vm_helper.c"/>
-                <F N="../../opensea-transport/src/vm_nvme_lib.c"/>
-                <F N="../../opensea-transport/src/vm_nvme_mgmt_common.c"/>
-                <F N="../../opensea-transport/src/win_helper.c"/>
-            </Folder>
-        </Folder>
-    </Files>
+	Version="10.0"
+	VendorName="SlickEdit"
+	TemplateName="(Other)"
+	WorkingDir=".">
+	<Config
+		Name="Release"
+		OutputFile=""
+		CompilerConfigName="">
+		<Menu>
+			<Target
+				Name="Compile"
+				MenuCaption="&amp;Compile"
+				CaptureOutputWith="ProcessBuffer"
+				SaveOption="SaveCurrent"
+				RunFromDir="%rw">
+				<Exec/>
+			</Target>
+			<Target
+				Name="Build"
+				MenuCaption="&amp;Build"
+				CaptureOutputWith="ProcessBuffer"
+				SaveOption="SaveWorkspaceFiles"
+				RunFromDir="%rw">
+				<Exec/>
+			</Target>
+			<Target
+				Name="Rebuild"
+				MenuCaption="&amp;Rebuild"
+				CaptureOutputWith="ProcessBuffer"
+				SaveOption="SaveWorkspaceFiles"
+				RunFromDir="%rw">
+				<Exec/>
+			</Target>
+			<Target
+				Name="Debug"
+				MenuCaption="&amp;Debug"
+				SaveOption="SaveNone"
+				RunFromDir="%rw">
+				<Exec/>
+			</Target>
+			<Target
+				Name="Execute"
+				MenuCaption="E&amp;xecute"
+				SaveOption="SaveNone"
+				RunFromDir="%rw">
+				<Exec CmdLine='".exe"'/>
+			</Target>
+		</Menu>
+	</Config>
+	<CustomFolders>
+		<Folder
+			Name="Source Files"
+			Filters="*.c;*.C;*.cc;*.cpp;*.cp;*.cxx;*.c++;*.prg;*.pas;*.dpr;*.asm;*.s;*.bas;*.java;*.cs;*.sc;*.e;*.cob;*.html;*.rc;*.tcl;*.py;*.pl;*.d;*.m;*.mm;*.go"></Folder>
+		<Folder
+			Name="Header Files"
+			Filters="*.h;*.H;*.hh;*.hpp;*.hxx;*.h++;*.inc;*.sh;*.cpy;*.if"></Folder>
+		<Folder
+			Name="Resource Files"
+			Filters="*.ico;*.cur;*.dlg"/>
+		<Folder
+			Name="Bitmaps"
+			Filters="*.bmp"/>
+		<Folder
+			Name="Other Files"
+			Filters=""/>
+	</CustomFolders>
+	<Files AutoFolders="DirectoryView">
+		<Folder Name="../gcc">
+			<F
+				N="../gcc/Makefile"
+				Type="Makefile"/>
+		</Folder>
+		<Folder Name="../../opensea-common">
+			<Folder Name="include">
+				<F N="../../opensea-common/include/common.h"/>
+				<F N="../../opensea-common/include/common_nix.h"/>
+				<F N="../../opensea-common/include/common_platform.h"/>
+				<F N="../../opensea-common/include/common_windows.h"/>
+				<F N="../../opensea-common/include/opensea_common_version.h"/>
+			</Folder>
+			<Folder Name="Make">
+				<Folder Name="gcc">
+					<F
+						N="../../opensea-common/Make/gcc/Makefile"
+						Type="Makefile"/>
+				</Folder>
+			</Folder>
+			<Folder Name="src">
+				<F N="../../opensea-common/src/common.c"/>
+				<F N="../../opensea-common/src/common_nix.c"/>
+				<F N="../../opensea-common/src/common_platform.c"/>
+				<F N="../../opensea-common/src/common_windows.c"/>
+			</Folder>
+		</Folder>
+		<Folder Name="../../opensea-operations">
+			<Folder Name="include">
+				<F N="../../opensea-operations/include/ata_Security.h"/>
+				<F N="../../opensea-operations/include/buffer_test.h"/>
+				<F N="../../opensea-operations/include/defect.h"/>
+				<F N="../../opensea-operations/include/depopulate.h"/>
+				<F N="../../opensea-operations/include/device_statistics.h"/>
+				<F N="../../opensea-operations/include/drive_info.h"/>
+				<F N="../../opensea-operations/include/dst.h"/>
+				<F N="../../opensea-operations/include/firmware_download.h"/>
+				<F N="../../opensea-operations/include/format_unit.h"/>
+				<F N="../../opensea-operations/include/generic_tests.h"/>
+				<F N="../../opensea-operations/include/host_erase.h"/>
+				<F N="../../opensea-operations/include/logs.h"/>
+				<F N="../../opensea-operations/include/opensea_operation_version.h"/>
+				<F N="../../opensea-operations/include/operations.h"/>
+				<F N="../../opensea-operations/include/operations_Common.h"/>
+				<F N="../../opensea-operations/include/power_control.h"/>
+				<F N="../../opensea-operations/include/sanitize.h"/>
+				<F N="../../opensea-operations/include/sas_phy.h"/>
+				<F N="../../opensea-operations/include/seagate_operations.h"/>
+				<F N="../../opensea-operations/include/sector_repair.h"/>
+				<F N="../../opensea-operations/include/set_max_lba.h"/>
+				<F N="../../opensea-operations/include/set_sector_size.h"/>
+				<F N="../../opensea-operations/include/smart.h"/>
+				<F N="../../opensea-operations/include/trim_unmap.h"/>
+				<F N="../../opensea-operations/include/writesame.h"/>
+				<F N="../../opensea-operations/include/zoned_operations.h"/>
+			</Folder>
+			<Folder Name="Make">
+				<Folder Name="gcc">
+					<F
+						N="../../opensea-operations/Make/gcc/Makefile"
+						Type="Makefile"/>
+				</Folder>
+			</Folder>
+			<Folder Name="src">
+				<F N="../../opensea-operations/src/ata_Security.c"/>
+				<F N="../../opensea-operations/src/buffer_test.c"/>
+				<F N="../../opensea-operations/src/defect.c"/>
+				<F N="../../opensea-operations/src/depopulate.c"/>
+				<F N="../../opensea-operations/src/device_statistics.c"/>
+				<F N="../../opensea-operations/src/drive_info.c"/>
+				<F N="../../opensea-operations/src/dst.c"/>
+				<F N="../../opensea-operations/src/firmware_download.c"/>
+				<F N="../../opensea-operations/src/format_unit.c"/>
+				<F N="../../opensea-operations/src/generic_tests.c"/>
+				<F N="../../opensea-operations/src/host_erase.c"/>
+				<F N="../../opensea-operations/src/logs.c"/>
+				<F N="../../opensea-operations/src/operations.c"/>
+				<F N="../../opensea-operations/src/power_control.c"/>
+				<F N="../../opensea-operations/src/sanitize.c"/>
+				<F N="../../opensea-operations/src/sas_phy.c"/>
+				<F N="../../opensea-operations/src/seagate_operations.c"/>
+				<F N="../../opensea-operations/src/sector_repair.c"/>
+				<F N="../../opensea-operations/src/set_max_lba.c"/>
+				<F N="../../opensea-operations/src/set_sector_size.c"/>
+				<F N="../../opensea-operations/src/smart.c"/>
+				<F N="../../opensea-operations/src/trim_unmap.c"/>
+				<F N="../../opensea-operations/src/writesame.c"/>
+				<F N="../../opensea-operations/src/zoned_operations.c"/>
+			</Folder>
+		</Folder>
+		<Folder Name="../../opensea-transport">
+			<Folder Name="include">
+				<F N="../../opensea-transport/include/ata_helper.h"/>
+				<F N="../../opensea-transport/include/ata_helper_func.h"/>
+				<F N="../../opensea-transport/include/cam_helper.h"/>
+				<F N="../../opensea-transport/include/cmds.h"/>
+				<F N="../../opensea-transport/include/common_public.h"/>
+				<F N="../../opensea-transport/include/csmi_helper.h"/>
+				<F N="../../opensea-transport/include/csmi_helper_func.h"/>
+				<F N="../../opensea-transport/include/csmisas.h"/>
+				<F N="../../opensea-transport/include/cypress_legacy_helper.h"/>
+				<F N="../../opensea-transport/include/nec_legacy_helper.h"/>
+				<F N="../../opensea-transport/include/nvme_helper.h"/>
+				<F N="../../opensea-transport/include/nvme_helper_func.h"/>
+				<F N="../../opensea-transport/include/platform_helper.h"/>
+				<F N="../../opensea-transport/include/prolific_legacy_helper.h"/>
+				<F N="../../opensea-transport/include/psp_legacy_helper.h"/>
+				<F N="../../opensea-transport/include/sat_helper.h"/>
+				<F N="../../opensea-transport/include/sat_helper_func.h"/>
+				<F N="../../opensea-transport/include/scsi_helper.h"/>
+				<F N="../../opensea-transport/include/scsi_helper_func.h"/>
+				<F N="../../opensea-transport/include/sg_helper.h"/>
+				<F N="../../opensea-transport/include/ti_legacy_helper.h"/>
+				<F N="../../opensea-transport/include/usb_hacks.h"/>
+				<F N="../../opensea-transport/include/uscsi_helper.h"/>
+				<F N="../../opensea-transport/include/version.h"/>
+				<F N="../../opensea-transport/include/vm_helper.h"/>
+				<F N="../../opensea-transport/include/vm_nvme.h"/>
+				<F N="../../opensea-transport/include/vm_nvme_drv_config.h"/>
+				<F N="../../opensea-transport/include/vm_nvme_lib.h"/>
+				<F N="../../opensea-transport/include/vm_nvme_mgmt.h"/>
+				<F N="../../opensea-transport/include/win_helper.h"/>
+			</Folder>
+			<Folder Name="Make">
+				<Folder Name="gcc">
+					<F
+						N="../../opensea-transport/Make/gcc/Makefile"
+						Type="Makefile"/>
+				</Folder>
+			</Folder>
+			<Folder Name="src">
+				<F N="../../opensea-transport/src/ata_cmds.c"/>
+				<F N="../../opensea-transport/src/ata_helper.c"/>
+				<F N="../../opensea-transport/src/ata_legacy_cmds.c"/>
+				<F N="../../opensea-transport/src/cam_helper.c"/>
+				<F N="../../opensea-transport/src/cmds.c"/>
+				<F N="../../opensea-transport/src/common_public.c"/>
+				<F N="../../opensea-transport/src/csmi_helper.c"/>
+				<F N="../../opensea-transport/src/cypress_legacy_helper.c"/>
+				<F N="../../opensea-transport/src/nec_legacy_helper.c"/>
+				<F N="../../opensea-transport/src/nvme_cmds.c"/>
+				<F N="../../opensea-transport/src/nvme_helper.c"/>
+				<F N="../../opensea-transport/src/prolific_legacy_helper.c"/>
+				<F N="../../opensea-transport/src/psp_legacy_helper.c"/>
+				<F N="../../opensea-transport/src/sat_helper.c"/>
+				<F N="../../opensea-transport/src/scsi_cmds.c"/>
+				<F N="../../opensea-transport/src/scsi_helper.c"/>
+				<F N="../../opensea-transport/src/sg_helper.c"/>
+				<F N="../../opensea-transport/src/ti_legacy_helper.c"/>
+				<F N="../../opensea-transport/src/usb_hacks.c"/>
+				<F N="../../opensea-transport/src/uscsi_helper.c"/>
+				<F N="../../opensea-transport/src/vm_helper.c"/>
+				<F N="../../opensea-transport/src/vm_nvme_lib.c"/>
+				<F N="../../opensea-transport/src/vm_nvme_mgmt_common.c"/>
+				<F N="../../opensea-transport/src/win_helper.c"/>
+			</Folder>
+		</Folder>
+	</Files>
 </Project>
