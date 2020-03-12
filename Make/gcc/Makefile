@@ -34,10 +34,10 @@ ifeq ($(UNAME),Linux)
     LFLAGS += -lm -lrt
 endif
 ifeq ($(UNAME),SunOS)
-    LFLAGS +=
+    LFLAGS += -lm
 endif
 ifeq ($(UNAME),FreeBSD)
-    LFLAGS += -lcam
+    LFLAGS += -lm -lcam
 endif
 
 MACHINE := $(shell uname -m)
