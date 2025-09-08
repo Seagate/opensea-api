@@ -3,6 +3,8 @@ project('openSeaChest', 'c', version : '25.05.2', license: 'MPL-2.0', default_op
 
 c = meson.get_compiler('c')
 
+default_lib = get_option('default_library')
+
 warning_flags = [ ]
 linker_flags = [ ] #additional linker flags to add per-compiler for hardening.
 
@@ -318,7 +320,7 @@ endif
 opensea_common = subproject('opensea-common')
 opensea_common_dep = opensea_common.get_variable('opensea_common_dep')
 
-opensea_transport = subproject('opensea-transport')
+opensea_transport = subproject('opensea-transport', default_options: ['default_library=' + default_lib])
 opensea_transport_dep = opensea_transport.get_variable('opensea_transport_dep')
 
 csmisupport = opensea_transport.get_variable('csmisupport')
@@ -326,5 +328,5 @@ if csmisupport.enabled()
   add_project_arguments('-DENABLE_CSMI', language : 'c')
 endif
 
-opensea_operations = subproject('opensea-operations')
+opensea_operations = subproject('opensea-operations', default_options: ['default_library=' + default_lib])
 opensea_operations_dep = opensea_operations.get_variable('opensea_operations_dep')
