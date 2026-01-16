@@ -76,7 +76,6 @@ if c.get_id().contains('gcc') or c.get_id().contains('clang')
   '-Wsequence-point',
   '-Wreturn-type',
   '-Wpointer-bool-conversion',
-  '-fvisibility=hidden', #to work similarly to Window's DLL import/export
   ]
 
   if c.get_id().contains('gcc') and c.version().version_compare('>=10.0')
@@ -118,7 +117,6 @@ if c.get_id().contains('gcc') or c.get_id().contains('clang')
   endif
 
   linker_flags += [
-    '-Wl,-z,nodlopen',
     '-Wl,-z,noexecstack',
     '-Wl,-z,relro',
     '-Wl,-z,now'
@@ -256,7 +254,7 @@ if (c.get_id() == 'gcc' or c.get_id() == 'clang') and target_machine.system() !=
           add_project_arguments('-std=gnu11', language : 'c')
         endif
       elif c.has_argument('-std=gnu99')
-        #Add this argument to the list since C99 is a minimum required C compiler standard
+        # Add this argument to the list since C99 is a minimum required C compiler standard
         c_std = 'gnu99'
         if meson.version().version_compare('<1.0.0')
           add_project_arguments('-std=gnu99', language : 'c')
@@ -272,14 +270,6 @@ endif
 add_global_arguments(c.get_supported_arguments(small_code_cc_flags), language : 'c')
 add_global_link_arguments(c.get_supported_link_arguments(small_code_link_flags), language : 'c')
 
-if not get_option('tcg').enabled()
-  add_project_arguments('-DDISABLE_TCG_SUPPORT', language : 'c')
-endif
-
-if get_option('atasecsetpass').enabled()
-  add_project_arguments('-DENABLE_ATA_SET_PASSWORD', language : 'c')
-endif
-
 if get_option('debug')
   add_project_arguments('-D_DEBUG', language : 'c')
 endif
@@ -287,9 +277,6 @@ endif
 if get_option('libc_musl')
   add_project_arguments('-DUSING_MUSL_LIBC=1', language : 'c')
 endif
-
-exec_prefix = 'openSeaChest_'
-common_sources = ['src/EULA.c', 'src/openseachest_util_options.c']
 
 os_deps = []
 
@@ -299,23 +286,6 @@ os_deps = []
 wingetopt = subproject('wingetopt', default_options: 'default_library=static')
 wingetopt_dep = wingetopt.get_variable('wingetopt_dep')
 os_deps += [wingetopt_dep]
-
-if target_machine.system() == 'windows'
-  windows = import('windows')
-  resources = windows.compile_resources('openSeaChest.rc')
-  common_sources += [resources]
-  add_project_arguments('-D_CRT_SECURE_NO_WARNINGS', language : 'c')
-endif
-
-usehelp2man = false
-if target_machine.system() != 'windows'
-  if meson.can_run_host_binaries()
-    help2man = find_program('help2man', required : false)
-    if help2man.found()
-      usehelp2man = true
-    endif
-  endif
-endif
 
 opensea_common = subproject('opensea-common')
 opensea_common_dep = opensea_common.get_variable('opensea_common_dep')
